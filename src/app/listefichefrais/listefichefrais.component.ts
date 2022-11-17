@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Fichefrais} from '../metier/fichefrais';
+//import {Fichefrais} from '../metier/fichefrais';
 import {FichefraisService} from "../service/fichefrais.service";
-import {Router} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-listefichefrais',
@@ -10,11 +11,11 @@ import {Router} from '@angular/common/http';
 })
 export class ListefichefraisComponent implements OnInit {
 
-  public mesFrais: Fichefrais[];
-  private error: string;
-  private id: number;
-  private titre: string;
-  private unFrais: Fichefrais;
+  public mesFrais: Fichefrais[] = [];
+  private error: string = "";
+  private id: number = 0;
+  private titre: string = "";
+  private unFrais: Fichefrais = new Fichefrais;
 
   constructor( private unFS: FichefraisService, private unRouteur: Router) {
     let httpHeaders = new HttpHeaders({
@@ -24,7 +25,7 @@ export class ListefichefraisComponent implements OnInit {
   }
 
   ngOnInit() {
-    let item = LocalStorage.getItem('id');
+    let item = localStorage.getItem('id');
     this.id = Number.parseInt(item);
     this.titre = 'Liste des frais du visiteur ' + this.id;
     this.getFicheFraisListe(this.id);

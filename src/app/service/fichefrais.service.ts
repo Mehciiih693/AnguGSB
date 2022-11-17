@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import {environment} from "../../environments/environment";
+import {Fichefrais} from "../metier/fichefrais";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +22,7 @@ export class FichefraisService {
   }
 
   getFicheFraisListe(id: number): Observable<any> {
-    this.ClientUrl = ENDPOINT + 'api/frais/listeFrais/'+id;
+    this.ClientUrl = environment.ENDPOINT + 'api/frais/listeFrais/'+id;
     return this.httpClient.get(this.ClientUrl);
   }
 

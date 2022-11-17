@@ -1,4 +1,4 @@
-export class fichefrais {
+export class Fichefrais {
   public id_frais: number = 0;
   public anneemois: string = "";
   public datemodification: Date = new Date();

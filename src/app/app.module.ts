@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ConnexionComponent } from 'connexion/connexion.component';
+//import { ConnexionComponent } from 'connexion/connexion.component';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from 'auth.guard';
+//import { AuthGuard } from 'auth.guard';
 import { HttpClientModule } from '@angular/common/http';
-import { VisiteurService } from 'service/visiteur.service';
+//import { VisiteurService } from 'service/visiteur.service';
 import { FichefraisService } from "./service/fichefrais.service";
-import { AjoutfichefraisComponent } from 'ajoutfichefrais/ajoutfichefrais.component';
-import {EtatService} from 'service/etat.service';
+//import { AjoutfichefraisComponent } from 'ajoutfichefrais/ajoutfichefrais.component';
+//import {EtatService} from 'service/etat.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,11 +20,11 @@ import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
-    ConnexionComponent,
+    //ConnexionComponent,
     NavbarComponent,
     ListefichefraisComponent
-    FichefraisComponent,
-    AjoutfichefraisComponent
+    //FichefraisComponent,
+    //AjoutfichefraisComponent
   ],
   imports: [
     FormsModule,
@@ -32,12 +32,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [
-    VisiteurService,
-    FichefraisService,
-    EtatService,
-    AuthGuard,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
