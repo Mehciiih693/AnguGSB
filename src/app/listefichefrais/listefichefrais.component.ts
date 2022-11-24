@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import {Fichefrais} from '../metier/fichefrais';
+import {Fichefrais} from '../metier/fichefrais';
 import {FichefraisService} from "../service/fichefrais.service";
 import {Router} from '@angular/router';
 import {HttpHeaders} from '@angular/common/http';
@@ -26,7 +26,7 @@ export class ListefichefraisComponent implements OnInit {
 
   ngOnInit() {
     let item = localStorage.getItem('id');
-    this.id = Number.parseInt(item);
+    this.id = 1;
     this.titre = 'Liste des frais du visiteur ' + this.id;
     this.getFicheFraisListe(this.id);
   }
@@ -40,6 +40,10 @@ export class ListefichefraisComponent implements OnInit {
         this.error = error.messages;
       }
     )
+  }
+
+  modifier(id: number): void {
+    this.unRouteur.navigate(['/modifierFrais/'+id]);
   }
 
 }
