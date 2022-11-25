@@ -5,8 +5,9 @@ import {Router} from '@angular/router';
 import {HttpHeaders} from '@angular/common/http';
 
 @Component({
-  selector: 'app-listefichefrais',
-  templateUrl: './listefichefrais.component.html',
+  selector: './app-listefichefrais',
+  templateUrl:
+    './listefichefrais.component.html',
   styleUrls: ['./listefichefrais.component.css']
 })
 export class ListefichefraisComponent implements OnInit {
@@ -14,7 +15,7 @@ export class ListefichefraisComponent implements OnInit {
   public mesFrais: Fichefrais[] = [];
   private error: string = "";
   private id: number = 0;
-  private titre: string = "";
+  public titre: string = "";
   private unFrais: Fichefrais = new Fichefrais;
 
   constructor( private unFS: FichefraisService, private unRouteur: Router) {
@@ -44,6 +45,10 @@ export class ListefichefraisComponent implements OnInit {
 
   modifier(id: number): void {
     this.unRouteur.navigate(['/modifierFrais/'+id]);
+  }
+
+  Supprimer(id: number): void {
+
   }
 
 }
