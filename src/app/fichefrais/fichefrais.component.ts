@@ -12,13 +12,13 @@ import {EtatService} from "../service/etat.service";
 })
 export class FichefraisComponent implements OnInit {
 
-  private unFrais: Fichefrais = new Fichefrais;
-  private fraisid: number = 0;
-  private titre: string = "Modification d'un frais";
+  public unFrais: Fichefrais = new Fichefrais;
+  public fraisid: number = 0;
+  public titre: string = "Modification d'un frais";
   private paramMap!: ParamMap;
-  private error: string = '';
-  private unEtat: Etat = new Etat();
-  private mesEtats: Etat[] = [];
+  public error: string = '';
+  public unEtat: Etat = new Etat();
+  public mesEtats: Etat[] = [];
 
   constructor(private unFS: FichefraisService,
               private unES: EtatService,
@@ -54,6 +54,25 @@ export class FichefraisComponent implements OnInit {
         this.error = error.messages;
       }
     )
+  }
+
+  annuler(): void {
+    this.unRouteur.navigate(['/accueil']);
+  }
+
+  valider(): void {
+    this.unFS.updateFrais(this.unFrais).subscribe(
+      () => {
+      },
+      (error) => {
+        this.error = error.messages;
+      }
+    );
+    if (this.error != '')
+      alert("Erreur survenue "+ this.error);
+    else
+      alert("Modification réussie !");
+    this.unRouteur.navigate(['/accueil']);
   }
 
 }

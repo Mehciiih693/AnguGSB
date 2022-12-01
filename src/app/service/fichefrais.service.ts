@@ -46,4 +46,9 @@ export class FichefraisService {
     console.error(errMsg);
     return Promise.reject(error.message || error);
   }
+
+  updateFrais(unFrais: Fichefrais): Observable<any> {
+    this.ClientUrl = ENDPOINT + 'api/frais/updateFicheFrais';
+    return this.httpClient.post(this.ClientUrl, JSON.stringify(unFrais));
+  }
 }
