@@ -7,14 +7,15 @@ import { FichefraisComponent } from './fichefrais/fichefrais.component';
 //import { AjoutfichefraisComponent } from '../ajoutfichefrais/ajoutfichefrais.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ConnexionComponent} from "./connexion/connexion.component";
+import {AccueilComponent} from "./accueil/accueil.component";
 
 const routes: Routes = [
   { path: '', redirectTo : '/connexion', pathMatch: 'full' },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'Listefichefrais', component: ListefichefraisComponent },
-  { path: 'modifierFrais/:id', component: FichefraisComponent },
+  //{ path: 'modifierFrais/:id', component: FichefraisComponent },
   //{ path: 'ajouterFrais', component: AjoutfichefraisComponent },
-  { path: 'accueil', component: NavbarComponent }
+  { path: 'accueil', component: AccueilComponent }
 ];
 
 @NgModule({

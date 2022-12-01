@@ -1,3 +1,6 @@
+<br>
+<br>
+<br>
 <form class="col-lg-6" name="formLogin" (ngSubmit)="valider()">
   <div>
     <h1>
@@ -5,8 +8,6 @@
     </h1>
     <div class="panel panel-info col-md-10 col-sm-10 col-md-offset-1">
       <div style="..." class="col-md-10 panel-body">
-        <div style="..." id="login-alert" class="alert alert-danger col-sm-12">
-        </div>
         <div style="..." class="col-md-5 col-md-offset-5 input-group">
           <span class="input-group-addon"><i class="=glyphicon glyphicon-user"></i></span>
           <input type="text" name="lg" class="form-control" [(ngModel)]="userLogin" placeholder="{{lblLogin}}" required autofocus>
@@ -15,13 +16,11 @@
           <span class="input-group-addon"><i class="glyphicon-lock"></i></span>
           <input type="password" name="mp" ng-model="pwd" class="form-control" [(ngModel)]="userMdp" placeholder="" required>
         </div>
-        <div [hidden="estCache" class="alert alert-danger" role="alert"> {{lblMessage}}
+        <div [hidden]="estCache" class="alert alert-danger" role="alert"> {{lblMessage}}
         </div>
+
         <div class="form-group">
           <div class="col-md-6 col-md-offset-6">
-
-
-
             <button type="submit" class="btn btn-default btn-primary">
               <span class="glyphicon glyphicon-log-in"></span>Valider
             </button>
