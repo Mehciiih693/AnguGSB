@@ -12,11 +12,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {VisiteurService} from "./service/visiteur.service";
 import { ListefichefraisComponent } from './listefichefrais/listefichefrais.component';
 import {FichefraisService} from "./service/fichefrais.service";
+import {FraishorsforfaitService} from "./service/fraishorsforfait.service";
 import { FichefraisComponent } from "./fichefrais/fichefrais.component";
 import { ConnexionComponent } from './connexion/connexion.component';
-//import { AjoutfichefraisComponent } from '../ajoutfichefrais/ajoutfichefrais.component';
 import {EtatService} from "./service/etat.service";
 import { AccueilComponent } from './accueil/accueil.component';
+import { FichefraishfComponent } from './fichefraishf/fichefraishf.component';
+import { ListefraishorsforfaitComponent } from './listefraishorsforfait/listefraishorsforfait.component';
+import { AjoutfichefraisComponent } from './ajoutfichefrais/ajoutfichefrais.component';
+
 
 
 @NgModule({
@@ -27,8 +31,10 @@ import { AccueilComponent } from './accueil/accueil.component';
     ListefichefraisComponent,
     ConnexionComponent,
     FichefraisComponent,
-    AccueilComponent
-    //AjoutfichefraisComponent
+    AccueilComponent,
+    FichefraishfComponent,
+    ListefraishorsforfaitComponent,
+    AjoutfichefraisComponent,
   ],
   imports: [
     FormsModule,

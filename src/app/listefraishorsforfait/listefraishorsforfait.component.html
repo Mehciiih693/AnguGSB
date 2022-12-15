@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<BR> <BR> <BR>
+<div>
+  <h1>
+    {{titre }}
+  </h1>
+  <BR> <BR>
+</div>
+<div class="container">
+  <div class="col-md-8">
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+      <tr>
+        <th style="width:20%">idFraishorsforfait</th>
+        <th style="width:20%">idFrais</th>
+        <th style="width:35%">Date Modification</th>
+        <th style="width:35%"> Libellé Frais hors forfait</th>
+        <th style="width:35%"> Montant Frais hors forfait</th>
+        <th style="width:10%">Modifier</th>
+        <th style="width:10%">Supprimer</th>
+      </tr>
+
+
+      </thead>
+      <tr *ngFor="let unFraisHF of mesFraisHT">
+        <td>{{unFraisHF.id_fraishorsforfait}}</td>
+        <td>{{unFraisHF.id_frais}}</td>
+        <td>{{unFraisHF.date_fraishorsforfait}}</td>
+        <td>{{unFraisHF.lib_fraishorsforfait}}</td>
+        <td>{{unFraisHF.montant_fraishorsforfait}}</td>
+
+
+        <td>
+          <button class="btn btn-primary" (click)="modifier(unFraisHF.id_fraishorsforfait)">
+            <span class="glyphicon glyphicon-pencil"></span> Modifier
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-primary" (click)="supprimer((unFraisHF.id_fraishorsforfait))"
+            onclick="javascript: if (confirm('Suppression confirmée ?')) {  }">
+            <span class="glyphicon glyphicon-remove"></span> Supprimer
+          </button>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="text-align: right"> Montant total :</td>
+        <td>  {{montantTotal}}  €</td>
+      </tr>
+    </table>
+    <BR> <BR>
+    <div class="form-group">
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+        <button type="button" (click)="ajouterFraisHorsForfait()" class="btn btn-default btn-primary">
+          <span class="glyphicon glyphicon-plus"></span> Ajouter
+        </button>
+        <button type="button"  (click)="validerMontantFraisHorsForfait()" class="btn btn-default btn-primary" >
+          <span class="glyphicon glyphicon-ok"></span> Valider
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

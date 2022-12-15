@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from 'rxjs';
 import {Fichefrais} from "../metier/fichefrais";
 import {environment} from "../environments/environment";
+import {Fraishf} from "../metier/fraishf";
 
 const ENDPOINT = environment.ENDPOINT;
 
@@ -49,6 +50,21 @@ export class FichefraisService {
 
   updateFrais(unFrais: Fichefrais): Observable<any> {
     this.ClientUrl = ENDPOINT + 'api/frais/updateFicheFrais';
+    return this.httpClient.post(this.ClientUrl, JSON.stringify(unFrais));
+  }
+
+  addFrais(unFrais: Fichefrais): Observable<any> {
+    this.ClientUrl = environment.ENDPOINT + 'api/frais/addFicheFrais';
+    return this.httpClient.post(this.ClientUrl, JSON.stringify(unFrais));
+  }
+
+  deleteFrais(unFrais: Fichefrais): Observable<any> {
+    this.ClientUrl = environment.ENDPOINT+'api/frais/deleteFicheFrais';
+    return this.httpClient.post(this.ClientUrl, JSON.stringify(unFrais));
+  }
+
+  ValidateMontantFrais(unFrais: Fichefrais): Observable<any> {
+    this.ClientUrl = environment.ENDPOINT + 'api/frais/validateFraisMontant';
     return this.httpClient.post(this.ClientUrl, JSON.stringify(unFrais));
   }
 }
