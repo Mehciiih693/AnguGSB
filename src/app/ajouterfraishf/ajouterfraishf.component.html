@@ -1,0 +1,38 @@
+<form name="fajoutfraishf">
+  <app-navbar></app-navbar>
+  <BR> <BR> <BR>
+  <div>
+    <h1>
+      {{titre }}<BR>
+    </h1>
+    <BR> <BR>
+
+    <div class="col-md-12 col-sm-12 well well-md well-sm">
+      <div class="form-horizontal">
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">Libelle : </label>
+          <div class="col-md-2 col-sm-3">
+            <input type="text" name="lib_fraishorsforfait" [(ngModel)]="unFraisHF.lib_fraishorsforfait"
+                   class="form-control" placeholder="Action réalisée" required autofocus>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">Date : </label>
+          <div class="col-md-2 col-sm-2">
+            <input type="date" name="date_fraishorsforfait" [(ngModel)]="unFraisHF.date_fraishorsforfait"
+                   class="form-control" placeholder="Date frais hors forfait" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">Montant : </label>
+          <div class="col-md-2 col-sm-2">
+            <input type="currency" class="form-control" name="montant_fraishorsforfait"
+                   [(ngModel)]="unFraisHF.montant_fraishorsforfait" placeholder="Montant engagé" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">

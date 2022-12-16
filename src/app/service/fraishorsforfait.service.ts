@@ -34,7 +34,7 @@ export class FraishorsforfaitService {
     return this.httpClient.get(this.ClientUrl);
   }
 
-  addFraisHF(unFraisHF: Fraishf) : Observable<any> {
+  ajoutFraisHF(unFraisHF: Fraishf) : Observable<any> {
     this.ClientUrl = environment.ENDPOINT + 'api/frais/addFraisHorsForfait';
     return this.httpClient.post(this.ClientUrl, JSON.stringify(unFraisHF));
   }

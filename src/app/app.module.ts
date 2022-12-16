@@ -20,6 +20,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FichefraishfComponent } from './fichefraishf/fichefraishf.component';
 import { ListefraishorsforfaitComponent } from './listefraishorsforfait/listefraishorsforfait.component';
 import { AjoutfichefraisComponent } from './ajoutfichefrais/ajoutfichefrais.component';
+import { AjouterfraishfComponent } from './ajouterfraishf/ajouterfraishf.component';
 
 
 
@@ -35,6 +36,7 @@ import { AjoutfichefraisComponent } from './ajoutfichefrais/ajoutfichefrais.comp
     FichefraishfComponent,
     ListefraishorsforfaitComponent,
     AjoutfichefraisComponent,
+    AjouterfraishfComponent,
   ],
   imports: [
     FormsModule,
