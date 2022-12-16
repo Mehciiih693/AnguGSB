@@ -75,4 +75,8 @@ export class FichefraisComponent implements OnInit {
     this.unRouteur.navigate(['/accueil']);
   }
 
+  fraishorsforfait(){
+    this.unRouteur.navigate(['/Listefraishorsforfait']);
+  }
+
 }

@@ -12,11 +12,11 @@ import {FraishorsforfaitService} from "../service/fraishorsforfait.service";
 })
 export class AjouterfraishfComponent implements OnInit {
 
-  private unFraisHF: Fraishf = new Fraishf();
-  private fraisid: number = 0;
-  private titre: string = "Ajout d'un frais hors forfait";
-  private error: string = "";
-  private id: number = 0;
+  public unFraisHF: Fraishf = new Fraishf();
+  public fraisid: number = 0;
+  public titre: string = "Ajout d'un frais hors forfait";
+  public error: string = "";
+  public id: number = 0;
 
   constructor( private unFHF: FraishorsforfaitService,
                private activatedRoute: ActivatedRoute,
@@ -28,4 +28,24 @@ export class AjouterfraishfComponent implements OnInit {
     this.titre += ''+this.fraisid;
   }
 
+  valider(): void {
+    this.unFraisHF.id_frais = this.fraisid;
+
+    this.unFHF.ajoutFraisHF(this.unFraisHF).subscribe(
+      ()=>{
+      },
+      (error)=>{
+        this.error = error.messages;
+      }
+    );
+    if (this.error != '')
+      alert("Erreur survenue "+this.error);
+    else
+      alert("Ajout réussi !");
+    this.unRouteur.navigate(['/accueil']);
+  }
+
+  annuler(): void {
+    this.unRouteur.navigate(['/accueil']);
+  }
 }

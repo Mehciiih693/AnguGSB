@@ -19,7 +19,7 @@ import {EtatService} from "./service/etat.service";
 import { AccueilComponent } from './accueil/accueil.component';
 import { FichefraishfComponent } from './fichefraishf/fichefraishf.component';
 import { ListefraishorsforfaitComponent } from './listefraishorsforfait/listefraishorsforfait.component';
-import { AjoutfichefraisComponent } from './ajoutfichefrais/ajoutfichefrais.component';
+import { AjoutFicheFraisComponent } from "./ajoutfichefrais/ajoutfichefrais.component";
 import { AjouterfraishfComponent } from './ajouterfraishf/ajouterfraishf.component';
 
 
@@ -35,7 +35,7 @@ import { AjouterfraishfComponent } from './ajouterfraishf/ajouterfraishf.compone
     AccueilComponent,
     FichefraishfComponent,
     ListefraishorsforfaitComponent,
-    AjoutfichefraisComponent,
+    AjoutFicheFraisComponent,
     AjouterfraishfComponent,
   ],
   imports: [

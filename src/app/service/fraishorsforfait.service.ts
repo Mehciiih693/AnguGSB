@@ -48,4 +48,13 @@ export class FraishorsforfaitService {
     this.ClientUrl = environment.ENDPOINT+'api/frais/deleteFicheFraisHF';
     return this.httpClient.post(this.ClientUrl, JSON.stringify(unFraisHF));
   }
+
+  validateMontant(idf: number, montant: number) {
+    this.ClientUrl = ENDPOINT + 'api/frais/validateFraisMontant';
+    const data = {
+      id_frais: idf,
+      montantHF: montant
+    };
+    return this.httpClient.post(this.ClientUrl, JSON.stringify(data));
+  }
 }

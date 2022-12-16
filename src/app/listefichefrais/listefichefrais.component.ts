@@ -13,10 +13,10 @@ import {HttpHeaders} from '@angular/common/http';
 export class ListefichefraisComponent implements OnInit {
 
   public mesFrais: Fichefrais[] = [];
-  private error: string = "";
-  private id: number = 0;
+  public error: string = "";
+  public id: number = 0;
   public titre: string = "";
-  private unFrais: Fichefrais = new Fichefrais;
+  public unFrais: Fichefrais = new Fichefrais;
 
   constructor( private unFS: FichefraisService, private unRouteur: Router) {
     let httpHeaders = new HttpHeaders({
@@ -27,7 +27,8 @@ export class ListefichefraisComponent implements OnInit {
 
   ngOnInit() {
     let item = localStorage.getItem('id');
-    this.id = 1;
+    // @ts-ignore
+    this.id = item;
     this.titre = 'Liste des frais du visiteur ' + this.id;
     this.getFicheFraisListe(this.id);
   }

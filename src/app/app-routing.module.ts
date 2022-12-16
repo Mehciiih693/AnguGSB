@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ListefichefraisComponent } from './listefichefrais/listefichefrais.component';
 import { FichefraisComponent } from './fichefrais/fichefrais.component';
-import { AjoutfichefraisComponent} from "./ajoutfichefrais/ajoutfichefrais.component";
+import { AjoutFicheFraisComponent} from "./ajoutfichefrais/ajoutfichefrais.component";
 import { NavbarComponent } from './navbar/navbar.component';
 import {ConnexionComponent} from "./connexion/connexion.component";
 import {AccueilComponent} from "./accueil/accueil.component";
@@ -16,8 +16,10 @@ const routes: Routes = [
   { path: 'connexion', component: ConnexionComponent },
   { path: 'Listefichefrais', component: ListefichefraisComponent },
   { path: 'modifierFrais/:id', component: FichefraisComponent },
-  { path: 'ajouterFrais', component: AjoutfichefraisComponent },
-  { path: 'accueil', component: AccueilComponent }
+  { path: 'ajouterFrais', component: AjoutFicheFraisComponent },
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'Listefraishorsforfait', component: ListefraishorsforfaitComponent},
+  { path: 'modifierHF/:id', component: FichefraishfComponent}
 ];
 
 @NgModule({

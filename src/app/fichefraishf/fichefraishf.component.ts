@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Fraishf} from "../metier/fraishf";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FraishorsforfaitService} from "../service/fraishorsforfait.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-fichefraishf',
@@ -10,12 +11,12 @@ import {FraishorsforfaitService} from "../service/fraishorsforfait.service";
 })
 export class FichefraishfComponent implements OnInit {
 
-  private unFraisHF: Fraishf = new Fraishf;
-  private fraishfid: number = 0;
-  private titre: string = "Modification d'un frais hors forfait";
-  private paramMap!: ParamMap;
-  private error: string = '';
-  private id: number = 0;
+  public unFraisHF: Fraishf = new Fraishf;
+  public fraishfid: number = 0;
+  public titre: string = "Modification d'un frais hors forfait";
+  public paramMap!: ParamMap;
+  public error: string = '';
+  public id: number = 0;
 
 
   constructor(private unFHF: FraishorsforfaitService,

@@ -10,14 +10,14 @@ import {generate} from "rxjs";
   styleUrls: ['./listefraishorsforfait.component.css']
 })
 export class ListefraishorsforfaitComponent implements OnInit {
-  private mesFraisHT: Fraishf[] = [];
-  private visiteurid: number = 0;
-  private titre: string = "";
-  private id: number = 0;
-  private error: string = "";
-  private montantTotal: number = 0;
-  private idFrais: number = 0;
-  private unFraisHF: Fraishf = new Fraishf;
+  public mesFraisHT: Fraishf[] = [];
+  public visiteurid: number = 0;
+  public titre: string = "";
+  public id: number = 0;
+  public error: string = "";
+  public montantTotal: number = 0;
+  public idFrais: number = 0;
+  public unFraisHF: Fraishf = new Fraishf;
 
   constructor(private unSHF: FraishorsforfaitService,
               private activatedRoute: ActivatedRoute,
@@ -64,6 +64,37 @@ export class ListefraishorsforfaitComponent implements OnInit {
 
   modifier(id: number): void {
     this.unRouteur.navigate(['/modifierFraishf/'+id]);
+  }
+
+  supprimer(id: number): void {
+    this.unFraisHF = new Fraishf();
+    this.unFraisHF.id_fraishorsforfait=id;
+    this.unSHF.deleteFraisHF(this.unFraisHF).subscribe(
+      () => {
+      },
+      (error) => {
+        this.error = error.messages;
+      }
+    );
+    this.unRouteur.navigate(['/accueil']);
+  }
+
+  validerMontantFraisHorsForfait(): void {
+
+    this.unSHF.validateMontant(this.mesFraisHT[0].id_frais, this.montantTotal).subscribe(
+      () => {
+        alert("Mise à jour   réussie!");
+        this.unRouteur.navigate(['/accueil']);
+      },
+      (error) => {
+        this.error = error.messages;
+        alert(error.messages);
+      }
+    );
+  }
+
+  ajouterFraisHorsForfait():void{
+    this.unRouteur.navigate(['AjouterFraisHT/'+this.idFrais])
   }
 
 }
