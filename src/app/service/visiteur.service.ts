@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {visiteur} from "../metier/visiteur";
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../environments/environment";
+import {visiteur} from "../metier/visiteur";
 
 const ENDPOINT = environment.ENDPOINT;
 
@@ -21,8 +21,9 @@ export class VisiteurService {
     });
   }
 
-  getLogin(unV: visiteur): Observable<any> {
-    this.ClientUrl = ENDPOINT + 'api/getConnexion';
+  Login(unV: visiteur): Observable<any> {
+    this.ClientUrl = ENDPOINT + 'api/login';
+    console.log(this.ClientUrl)
     return this.httpClient.post(this.ClientUrl, JSON.stringify(unV));
   }
 }

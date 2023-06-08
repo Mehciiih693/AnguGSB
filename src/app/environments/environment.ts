@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ENDPOINT: 'http://localhost/hbela/ProjetWSGsb/public/'
+  ENDPOINT: 'http://localhost/hbela/AngularE5Bloc4/public/'
 };
 
 /*
